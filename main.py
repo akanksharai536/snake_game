@@ -6,6 +6,7 @@ pygame.init()
 white = (255, 255, 255)
 yellow = (255, 255, 102)
 black = (0, 0, 0)
+orange = (255, 165, 0)
 red = (213, 50, 80)
 green = (0, 255, 0)
 blue = (50, 153, 213)
@@ -26,15 +27,15 @@ score_font = pygame.font.SysFont("comicsansms", 35)
 
 def our_snake(snake_block, snake_list):
     for x in snake_list:
-        pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
+        pygame.draw.rect(dis, orange, [x[0], x[1], snake_block, snake_block])
 
 def Your_score(score):
     value = score_font.render("Your Score: " + str(score), True, yellow)
     dis.blit(value, [0, 0])
 
-def message(msg, color):
+def message(msg, color,a,b):
     mesg = font_style.render(msg, True, color)
-    dis.blit(mesg, [dis_width / 6, dis_height / 3])
+    dis.blit(mesg, [dis_width / a, dis_height / b])
 
 
 def gameLoop():
@@ -49,7 +50,7 @@ def gameLoop():
 
     snake_List = []
     Length_of_snake = 1
-    snake_speed = 5
+    snake_speed = 10
 
     foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
@@ -58,7 +59,8 @@ def gameLoop():
 
         while game_close == True:
             dis.fill(blue)
-            message("You Lost! Press C-Play Again or Q-Quit", red)
+            message(f"you scored : {Length_of_snake-1}", black,6,2)
+            message("You Lost! Press C-Play Again or Q-Quit", red,6,3)
 
             pygame.display.update()
 
