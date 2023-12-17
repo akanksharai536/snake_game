@@ -1,5 +1,5 @@
 # Snake Game
-###### <I> *** This project is a learning project. Please refer it just for learning purpose. multiple sources from source has been a inspiration for this project. *** </I>
+###### <I> *** This project is a learning project. Please refer it just for learning purpose. multiple resources from internet source has been a inspiration for this project. *** </I>
 
 In Python, I am building a game called “Snake game” where the player handles a snake. The snake walks around the screen and eats food to grow. It tries to avoid hitting the edges or itself. We use a GUI tool like Pygame or Tkinter to handle the graphics and add features like user input, snake movement, contact recognition, eating food, the game loop, and game over. 
 
